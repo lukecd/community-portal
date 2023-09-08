@@ -50,6 +50,10 @@ const WeeklyChallenges: React.FC = () => {
 		setMessage("Proof submited");
 	};
 
+	const toggleRowExpansion = async (inde: number) => {
+		console.log("toggleRowExpansion");
+	};
+
 	return (
 		<div className="bg-white rounded-lg p-5 border w-full shadow-xl">
 			{isLoading ? (

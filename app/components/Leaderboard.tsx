@@ -1,8 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import getLeaderboard from "../utils/getLeaderboard";
+type LeaderboardEntry = {
+	wallet: string;
+	points: number;
+};
+
 const Leaderboard = () => {
-	const [leaderboardData, setLeaderboardData] = useState([]);
+	const [leaderboardData, setLeaderboardData] = useState<LeaderboardEntry[]>([]);
 
 	useEffect(() => {
 		async function fetchData() {

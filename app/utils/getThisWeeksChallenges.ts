@@ -9,6 +9,16 @@ function getStartAndEndOfWeek(date: Date) {
 
 	return { start: startOfWeek, end: endOfWeek };
 }
+
+type ChallengeItem = {
+	id: string;
+	type?: string;
+	instructions?: string;
+	link?: string;
+	points?: string;
+	needsProof?: string;
+};
+
 const getThisWeeksChallenges = async () => {
 	const endpoint = "https://devnet.bundlr.network/graphql";
 
@@ -56,23 +66,15 @@ const getThisWeeksChallenges = async () => {
 			});
 
 			return {
-				id: edge.node.id, // Add the id value here
+				id: edge.node.id,
 				...tags,
 			};
 		})
-		.filter((item) => {
+		.filter((item: ChallengeItem) => {
 			// Ensure all required tags are present
 			const { type, instructions, link, points, needsProof } = item;
 			return type && instructions && link && points && needsProof;
-		})
-		.map((item) => ({
-			id: item.id, // Include the id value in the final mapping
-			type: item.type,
-			instructions: item.instructions,
-			link: item.link,
-			points: parseInt(item.points, 10),
-			needsProof: item.needsProof,
-		}));
+		});
 
 	return challenges;
 };
