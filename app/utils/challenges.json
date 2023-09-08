@@ -1,0 +1,22 @@
+[
+	{ "type": "profile", "instructions": "Fill out your full profile", "link": "/profile", "points": 5 },
+	{ "type": "meme", "instructions": "Share a meme online", "link": "/meme", "points": 2 },
+	{
+		"type": "github",
+		"instructions": "Give a star to the Provennace Toolkit",
+		"link": "https://github.com/Bundlr-Network/provenance-toolkit",
+		"points": 5
+	},
+	{
+		"type": "x",
+		"instructions": "Share this X on your profile",
+		"link": "https://twitter.com/BundlrNetwork/status/1697626665143472161",
+		"points": 5
+	},
+	{
+		"type": "quest",
+		"instructions": "Complete Quest 3",
+		"link": "https://docs.bundlr.network/hands-on/quests/quest3-graphql",
+		"points": 10
+	}
+]
