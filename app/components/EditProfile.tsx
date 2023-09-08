@@ -8,7 +8,7 @@ interface EditProfileProps {
 	initialTelegram?: string;
 	initialDiscord?: string;
 	initialTwitter?: string;
-	initialGithub?: string;
+	initialGitHub?: string;
 }
 
 export const EditProfile: React.FC<EditProfileProps> = ({
